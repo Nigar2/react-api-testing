@@ -5,11 +5,11 @@ import "./pagecard.css";
 const PageCard = ({ image, name, content }) => {
     const reversed= [PageCard].reverse();
     return (
-        
+        <div className="cards">
              {
-                reversed.map((index)=>(
-                                  
-                        <div className='card'{ index % 2 ?(
+                reversed.map((index)=>{
+                    return(               
+                        <div className='card' key={index}>
             <div className='card_image'>
                 <img src={image} alt={name} />
             </div>
@@ -17,12 +17,10 @@ const PageCard = ({ image, name, content }) => {
                 <h2>{name}</h2>
                 <h3>{content}</h3>
             </div>
-                        )
-            }
-
-      
-                )
-                )
+            
+        </div>
+                    )
+                })
             }            
             
         </div>

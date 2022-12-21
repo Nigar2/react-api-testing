@@ -3,8 +3,13 @@ import React from "react";
 import "./pagecard.css";
 
 const PageCard = ({ image, name, content }) => {
+    const reversed= [PageCard].reverse();
     return (
-        <div className='card'>
+        
+             {
+                reversed.map((index)=>(
+                                  
+                        <div className='card'{ index % 2 ?(
             <div className='card_image'>
                 <img src={image} alt={name} />
             </div>
@@ -12,7 +17,16 @@ const PageCard = ({ image, name, content }) => {
                 <h2>{name}</h2>
                 <h3>{content}</h3>
             </div>
+                        )
+            }
+
+      
+                )
+                )
+            }            
+            
         </div>
+       
     );
 };
 

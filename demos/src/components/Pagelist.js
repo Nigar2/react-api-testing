@@ -10,9 +10,11 @@ const PageList = ({pageData}) => {
                 return (
                     <PageCard
                         key={index}
+                        item={index}
                         image={data.image}
                         name={data.name}
-                        content={data.current}
+                        content={data.content.length>100?
+                        data.content.substring(0,100)+'..': data.content}
                     />
                 );
             })}
